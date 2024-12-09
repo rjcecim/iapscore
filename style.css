@@ -1,0 +1,114 @@
+:root {
+    --primary-color: #4e73df;
+    --secondary-color: #858796;
+    --background-color: #f8f9fc;
+    --input-border: #d1d3e2;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Montserrat', sans-serif;
+    --gradient-start: #4e73df;
+    --gradient-end: #224abe;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: var(--font-primary);
+    background-color: var(--background-color);
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+h1 {
+    font-family: var(--font-secondary);
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+#ciclos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: none;
+}
+.card {
+    border: none;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+.card-header {
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    border-radius: 12px 12px 0 0;
+    color: #fff;
+    padding: 20px;
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+.card-body {
+    padding: 20px;
+}
+.table th {
+    background-color: #f7f7f7;
+    font-weight: 600;
+    color: var(--secondary-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: var(--font-secondary);
+}
+.table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.sub-indicador-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.sub-indicador-container input {
+    flex: 1;
+}
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid var(--input-border);
+    font-family: var(--font-primary);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(74,144,226,0.5);
+}
+input.is-invalid {
+    border-color: var(--error-color);
+}
+.btn {
+    font-weight: 500;
+    font-family: var(--font-secondary);
+}
+.pontuacao-final {
+    font-size: 1.1rem;
+    font-family: var(--font-secondary);
+    font-weight: 700;
+}
+#pontuacao {
+    font-weight: 700;
+    color: #FF5722;
+}
+.toast-container {
+    z-index: 1055;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
