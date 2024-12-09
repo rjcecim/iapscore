@@ -141,10 +141,10 @@ const gerarHTMLCiclo=(index,c)=>{
 const atualizarSaldo=card=>{
     const qtdInicios=parseInt(card.querySelector("#qtd-inicios").value,10)||0;
     const qtdCessadas=parseInt(card.querySelector("#qtd-cessadas").value,10)||0;
-    const ciclos=parseInt(card.querySelector("#ciclos").value,10)||1;
-    const grupos=parseInt(card.querySelector("#grupos").value,10)||1;
+    const cicloVal=parseInt(card.querySelector("#ciclos").value,10)||1;
+    const grupoVal=parseInt(card.querySelector("#grupos").value,10)||1;
     let saldo=0;
-    if(ciclos>0&&grupos>0)saldo=((qtdInicios - qtdCessadas)/ciclos)/grupos;
+    if(cicloVal>0&&grupoVal>0)saldo=((qtdInicios - qtdCessadas)/cicloVal)/grupoVal;
     card.querySelector("#resultado-saldo").value=saldo.toFixed(2);
 };
 const calcularPontuacao=card=>{
@@ -241,8 +241,15 @@ const adicionarCiclo=()=>{
     ciclos.push({});
     renderCiclos();
 };
+const removerCiclo=()=>{
+    if(ciclos.length>1){
+        ciclos.pop();
+        renderCiclos();
+    }
+};
 document.getElementById("btn-salvar-dados").addEventListener("click",salvar);
 document.getElementById("btn-adicionar-ciclo").addEventListener("click",adicionarCiclo);
+document.getElementById("btn-remover-ciclo").addEventListener("click",removerCiclo);
 onValue(ref(db,"dados/ciclos"),snapshot=>{
     const val=snapshot.val();
     if(val&&Array.isArray(val)&&val.length>0) ciclos=val; else ciclos=[{}];
