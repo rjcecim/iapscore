@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simulação de Pontuação IAP</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400,700&family=Roboto:wght@400,700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -10,12 +11,12 @@
 </head>
 <body>
 <header class="mb-4 text-center">
-    <div class="container py-3">
+    <div class="container-fluid py-3">
         <h1 class="text-primary">Simulação de Pontuação IAP</h1>
     </div>
 </header>
 <main class="pb-4">
-    <div class="container mb-3 text-end d-flex justify-content-end gap-2">
+    <div class="container-fluid mb-3 text-end d-flex justify-content-end gap-2 flex-wrap">
         <button type="button" id="btn-adicionar-ciclo" class="btn btn-success d-inline-flex align-items-center">
             <i class="bi bi-plus-circle me-2"></i>Adicionar Ciclo
         </button>
@@ -23,7 +24,7 @@
             <i class="bi bi-dash-circle me-2"></i>Remover Ciclo
         </button>
     </div>
-    <div class="container" id="ciclos-container"></div>
+    <div class="container-fluid" id="ciclos-container"></div>
 </main>
 <div class="toast-container position-fixed top-0 end-0 p-3">
     <div id="toast-success" class="toast text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
