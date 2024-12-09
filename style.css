@@ -79,22 +79,16 @@ h1 {
 .table tbody td {
     font-family: var(--font-primary);
 }
-
-/* Coluna Indicador - limitar ao conteúdo */
 .table thead th:nth-child(1),
 .table tbody td:nth-child(1) {
     white-space: nowrap;
     overflow: visible;
 }
-
-/* Coluna Pontos - limitar ao ícone + texto "Pontos" */
 .table thead th:nth-child(4),
 .table tbody td:nth-child(4) {
     white-space: nowrap;
     overflow: visible;
 }
-
-/* As colunas Sub-Indicador e Resultado serão flexíveis */
 .table thead th:nth-child(2),
 .table thead th:nth-child(3),
 .table tbody td:nth-child(2),
@@ -103,8 +97,6 @@ h1 {
     overflow: hidden;
     white-space: nowrap;
 }
-
-/* Ajuste de responsividade para telas menores */
 .sub-indicador-container {
     display: flex;
     flex-wrap: wrap;
