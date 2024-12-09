@@ -31,7 +31,15 @@ const gerarHTMLCiclo=(index,c)=>{
     return `
     <div class="card" data-index="${index}">
         <div class="card-header">
-            Ciclo ${index+1}
+            <span>Ciclo ${index+1}</span>
+            <div class="d-flex gap-2">
+                <button type="button" id="btn-salvar-dados-${index}" class="btn btn-primary d-inline-flex align-items-center">
+                    <i class="bi bi-save me-2"></i>Salvar Dados
+                </button>
+                <button type="button" id="btn-limpar-ciclo-${index}" class="btn btn-warning d-inline-flex align-items-center">
+                    <i class="bi bi-arrow-counterclockwise me-2"></i>Limpar Ciclo
+                </button>
+            </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -202,7 +210,14 @@ const eventosCiclo=card=>{
             e.addEventListener("input",()=>calcularPontuacao(card));
         }
     });
+    const i=parseInt(card.dataset.index,10);
+    card.querySelector(`#btn-salvar-dados-${i}`).addEventListener("click",salvar);
+    card.querySelector(`#btn-limpar-ciclo-${i}`).addEventListener("click",()=>limparCiclo(i));
     calcularPontuacao(card);
+};
+const limparCiclo=i=>{
+    ciclos[i]={};
+    renderCiclos();
 };
 const renderCiclos=()=>{
     const cont=document.getElementById("ciclos-container");
@@ -247,7 +262,6 @@ const removerCiclo=()=>{
         renderCiclos();
     }
 };
-document.getElementById("btn-salvar-dados").addEventListener("click",salvar);
 document.getElementById("btn-adicionar-ciclo").addEventListener("click",adicionarCiclo);
 document.getElementById("btn-remover-ciclo").addEventListener("click",removerCiclo);
 onValue(ref(db,"dados/ciclos"),snapshot=>{
