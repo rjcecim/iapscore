@@ -104,7 +104,7 @@ const gerarHTMLCiclo=(index,c)=>{
                                 <td id="pontos-saldo" class="text-center">0</td>
                             </tr>
                             <tr>
-                                <td><i class="bi bi-people-fill text-info me-1"></i>Ativas CPV</td>
+                                <td><i class="bi bi-people-fill text-info me-1"></i>Ativas Crer Para Ver</td>
                                 <td>
                                     <div class="sub-indicador-container">
                                         <input type="number" id="ativas-cpv-realizado" class="form-control" placeholder="Realizado" step="1" min="0" required value="${c.AtivasCPVRealizado||0}">
