@@ -1,12 +1,12 @@
 /* Variáveis de Cores e Fontes */
 :root {
     /* Paleta de Cores Suaves */
-    --primary-color: #5a9bd5; /* Azul Suave */
+    --primary-color: #5a9bd5;  /* Azul Suave */
     --secondary-color: #a0a5ab; /* Cinza Suave */
     --background-color: #f0f4f8; /* Azul Muito Claro */
-    --input-border: #ced4da; /* Cinza Claro */
-    --error-color: #e57373; /* Vermelho Suave */
-    --success-color: #81c784; /* Verde Suave */
+    --input-border: #ced4da;    /* Cinza Claro */
+    --error-color: #e57373;     /* Vermelho Suave */
+    --success-color: #81c784;   /* Verde Suave */
     --font-primary: 'Roboto', sans-serif;
     --font-secondary: 'Montserrat', sans-serif;
 }
@@ -27,7 +27,7 @@ body {
     flex-direction: column;
 }
 
-/* Cabeçalho (Navbar) */
+/* Navbar */
 .navbar {
     font-family: var(--font-secondary);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -35,8 +35,8 @@ body {
 
 /* Seção de Introdução */
 .intro-section {
-    background-color: #ffffff; /* Fundo Branco para clareza */
-    color: #343a40; /* Cinza Escuro para texto */
+    background-color: #ffffff; /* Fundo Branco */
+    color: #343a40; /* Cinza Escuro */
 }
 
 .intro-section h1 {
@@ -63,6 +63,7 @@ body {
 .intro-section .btn-success {
     background-color: var(--success-color);
     border-color: var(--success-color);
+    color: #ffffff;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
@@ -74,6 +75,7 @@ body {
 .intro-section .btn-danger {
     background-color: var(--error-color);
     border-color: var(--error-color);
+    color: #ffffff;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
@@ -111,8 +113,29 @@ body {
     flex-wrap: wrap;
 }
 
-.card-header .btn {
-    margin-left: 5px;
+/* Ajuste dos Botões "Salvar Dados" (btn-primary) e "Limpar Ciclo" (btn-warning) */
+.card-header .btn-primary {
+    background-color: #81c784; /* Verde suave pastel */
+    border-color: #81c784;
+    color: #ffffff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.card-header .btn-primary:hover {
+    background-color: #66bb6a;
+    border-color: #66bb6a;
+}
+
+.card-header .btn-warning {
+    background-color: #ffb74d; /* Laranja suave pastel */
+    border-color: #ffb74d;
+    color: #ffffff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.card-header .btn-warning:hover {
+    background-color: #ffa726;
+    border-color: #ffa726;
 }
 
 .card-body {
@@ -193,7 +216,7 @@ input.is-invalid {
     border-color: var(--error-color);
 }
 
-/* Botões */
+/* Botões Gerais */
 .btn {
     font-family: var(--font-secondary);
     font-weight: 500;
